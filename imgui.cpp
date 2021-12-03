@@ -14748,11 +14748,15 @@ static void ImGui::DockNodeCalcTabBarLayout(const ImGuiDockNode* node, ImRect* o
     }
     if (node->HasWindowMenuButton && style.WindowMenuButtonPosition == ImGuiDir_Left)
     {
-        r.Min.x += button_sz + style.ItemInnerSpacing.x;
+        // AM_BEGIN | cpettersson | 2021-12-03 | Removed Auto Hide Tab icon from tab bar
+        // r.Min.x += button_sz + style.ItemInnerSpacing.x;
+        // AM_END
     }
     else if (node->HasWindowMenuButton && style.WindowMenuButtonPosition == ImGuiDir_Right)
     {
-        r.Max.x -= button_sz + style.FramePadding.x;
+        // AM_BEGIN | cpettersson | 2021-12-03 | Removed Auto Hide Tab icon from tab bar
+        // r.Max.x -= button_sz + style.FramePadding.x;
+        // AM_END
         window_menu_button_pos = ImVec2(r.Max.x, r.Min.y);
     }
     if (out_tab_bar_rect) { *out_tab_bar_rect = r; }
